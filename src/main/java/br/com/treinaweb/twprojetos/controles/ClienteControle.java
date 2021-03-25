@@ -27,6 +27,15 @@ public class ClienteControle {
         return modelAndView;
     }
 
+    @GetMapping("/{id}")
+    public ModelAndView detalhes(@PathVariable Long id) {
+        ModelAndView modelAndView = new ModelAndView("cliente/detalhes");
+
+        modelAndView.addObject("cliente", clienteRepositorio.getOne(id));
+
+        return modelAndView;
+    }
+
     @GetMapping("/cadastrar")
     public ModelAndView cadastrar() {
         ModelAndView modelAndView = new ModelAndView("cliente/formulario");
@@ -36,7 +45,16 @@ public class ClienteControle {
         return modelAndView;
     }
 
-    @PostMapping("/cadastrar")
+    @GetMapping("/{id}/editar")
+    public ModelAndView editar(@PathVariable Long id) {
+        ModelAndView modelAndView = new ModelAndView("cliente/formulario");
+
+        modelAndView.addObject("cliente", clienteRepositorio.getOne(id));
+
+        return modelAndView;
+    }
+
+    @PostMapping({"/cadastrar", "/{id}/editar"})
     public String salvar(Cliente cliente) {
         clienteRepositorio.save(cliente);
 
