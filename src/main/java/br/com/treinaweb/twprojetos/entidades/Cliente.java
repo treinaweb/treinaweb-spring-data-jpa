@@ -89,6 +89,14 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
