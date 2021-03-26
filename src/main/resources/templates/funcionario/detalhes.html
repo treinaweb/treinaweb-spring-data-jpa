@@ -21,7 +21,7 @@
 
                 <h3 class="profile-username text-center" th:text="${funcionario.nome}">Nina Mcintire</h3>
 
-                <p class="text-muted text-center" th:text="${funcionario.cargo.nome}">Software Engineer</p>
+                <!-- <p class="text-muted text-center" th:text="${funcionario.cargo.nome}">Software Engineer</p> -->
               </div>
               <!-- /.card-body -->
             </div>
@@ -91,7 +91,7 @@
                 <!-- The timeline -->
                 <div class="timeline">
                   <!-- timeline item -->
-                  <div th:each="projeto : ${funcionario.projetos}">
+                  <!-- <div th:each="projeto : ${funcionario.projetos}">
                     <i class="fas fa-project-diagram bg-primary"></i>
 
                     <div class="timeline-item">
@@ -111,7 +111,7 @@
                         <a th:href="@{/projetos/{id} (id=${projeto.id})}" class="btn btn-primary btn-sm">Detalhes</a>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div><!-- /.card-body -->
             </div>
