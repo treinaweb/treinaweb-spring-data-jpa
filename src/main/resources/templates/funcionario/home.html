@@ -21,7 +21,7 @@
                   <th>Estado</th>
                   <th>Admissão</th>
                   <th>Demissão</th>
-                  <!-- <th>Cargo</th> -->
+                  <th>Cargo</th>
                   <th>Ações</th>
                 </tr>
               </thead>
@@ -37,7 +37,7 @@
                   <td 
                     th:text="${funcionario.dataDemissao == null ? '-' : #temporals.format(funcionario.dataDemissao)}"
                   >01/01/2021</td>
-                  <!-- <td th:text="${funcionario.cargo.nome}">Desenvolvedor(a) Front End Jr</td> -->
+                  <td th:text="${funcionario.cargo.nome}">Desenvolvedor(a) Front End Jr</td>
                   <td>
                     <div class="btn-group">
                       <a type="button" data-toggle="popover" data-placement="top" data-content="Detalhes" data-trigger="hover" class="btn btn-primary" th:href="@{/funcionarios/{id} (id=${funcionario.id})}">
