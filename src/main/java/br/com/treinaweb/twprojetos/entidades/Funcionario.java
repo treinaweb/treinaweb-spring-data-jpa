@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -23,11 +24,11 @@ public class Funcionario extends Pessoa {
     @DateTimeFormat(iso = ISO.DATE)
     private LocalDate dataDemissao;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cargo_id_fk", nullable = false)
     private Cargo cargo;
 
-    @ManyToMany(mappedBy = "equipe")
+    @ManyToMany(mappedBy = "equipe", fetch = FetchType.LAZY)
     private List<Projeto> projetos;
 
     public LocalDate getDataAdmissao() {

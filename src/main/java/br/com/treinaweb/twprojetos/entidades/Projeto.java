@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -33,11 +34,11 @@ public class Projeto extends Entidade {
     @DateTimeFormat(iso = ISO.DATE)
     private LocalDate dataFim;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cliente_id_fk", nullable = false)
     private Cliente cliente;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "lider_id_fk", nullable = false)
     private Funcionario lider;
 
